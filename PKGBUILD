@@ -1,13 +1,17 @@
 # Maintainer: Jan Boelsche <jan@lagomorph.de>
 pkgname=tre-screen-setup
-pkgver=1.0.0
+pkgver=1.5.0
 pkgrel=1
 pkgdesc="generate an xrendr and xinput command stream based on the contents of a station message"
 arch=('any')
 url=""
 license=('MIT')
 groups=()
-depends=('nodejs')
+depends=(
+  'nodejs'
+  'xdotool'
+  'wmctrl'
+)
 makedepends=('npm')
 checkdepends=()
 optdepends=()
