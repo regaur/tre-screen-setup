@@ -1,6 +1,6 @@
 # Maintainer: Jan Boelsche <jan@lagomorph.de>
 pkgname=tre-screen-setup
-pkgver=1.6.0
+pkgver=1.7.0
 pkgrel=1
 pkgdesc="generate an xrendr and xinput command stream based on the contents of a station message"
 arch=('any')
@@ -21,9 +21,11 @@ conflicts=()
 replaces=()
 source=(
   'tre-screen-setup@.service'
+  'restart-puppeteer'
 )
 
-sha256sums=('7045d9a04f6dd49b56a82d5a8e56f52156c0b01bbbf1d6e51f1a0ed397a6db7d')
+sha256sums=('34d5df7420ace8c1d6b7de8767dcb340f433824b0957cd48f9f90f4de1a59b34'
+            '1026028970aad44d0879a93f615a54b688fa601208f2179781aceca7232bae0e')
 
 pkgver () {
   npm view ${pkgname}@latest version
@@ -36,5 +38,6 @@ package () {
   mkdir -p $_npmdir
   npm install -g --prefix "${pkgdir}/usr" ${pkgname}@${pkgver}
 
-  install -Dm 644 -t "${pkgdir}/usr/lib/systemd/user" 'tre-screen-setup@.service'
+  install -Dm 644 -t "${pkgdir}/usr/lib/systemd/user" tre-screen-setup@.service
+  install -Dm 755 -t "${pkgdir}/usr/bin" restart-puppeteer
 }

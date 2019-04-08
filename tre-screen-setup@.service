@@ -5,7 +5,7 @@ Requires=kiosk-compiz.service
 After=kiosk-compiz.service
 
 [Service]
-ExecStart=/usr/bin/bash -xc "sudo -u %i tre-screen-setup /etc/%i/config | bash"
+ExecStart=/usr/bin/bash -xc "sudo -u %i tre-screen-setup /etc/%i/config --restart 'restart-puppeteer %i' | bash"
 RestartSec=5
 Restart=always
 
