@@ -1,6 +1,6 @@
 # Maintainer: Jan Boelsche <jan@lagomorph.de>
 pkgname=tre-screen-setup
-pkgver=1.7.0
+pkgver=1.8.0
 pkgrel=1
 pkgdesc="generate an xrendr and xinput command stream based on the contents of a station message"
 arch=('any')
